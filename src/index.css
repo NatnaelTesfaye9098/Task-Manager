@@ -20,7 +20,7 @@ body{
 
 .input-container{
   width: 500px;
-  height: 200px;
+  height: 150px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -30,6 +30,10 @@ body{
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding: 10px;
+  padding-left: 15px;
+  border: 0;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
 }
 
 .input-container input{
@@ -39,11 +43,42 @@ body{
   padding-left: 10px;
   box-sizing: border-box;
   border: 0;
-  border-radius: 10px;
+  border-bottom: 1px solid #443627;
 }
 
 .input-container textarea{
+  height: 120px;
+  padding: 8px;
   padding-left: 10px;
   border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+}
 
+textarea, input::placeholder{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+  width: 50px;
+  height: 50px;
+  background-color: #D98324;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 830px;
+  top: 270px;
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  border: 0;
+  color: #443627;
+}
+
+button:hover{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
