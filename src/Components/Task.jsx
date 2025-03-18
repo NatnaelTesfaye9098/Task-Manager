@@ -1,4 +1,4 @@
-const Task = () => {
+const Task = ({title, detail}) => {
     return(
         <div className="card">
             <h2>{title}</h2>
