@@ -9,6 +9,7 @@ const App = () => {
     detail: ""
   });
   const [items, setItems] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -19,18 +20,35 @@ const App = () => {
   }));
   }
 
-  const handleClick = (task) => {
-    setItems((prev) => {
-      return [...prev, task]
-    })
+  const handleClick = () => {
+    if (editIndex !== null) {
+      const updatedItems = items.map((item, index) =>
+        index === editIndex ? task : item
+      );
+      setItems(updatedItems);
+      setEditIndex(null);
+    } else {
+      setItems((prev) => [...prev, task]);
+    }
+
+    setTask({ title: "", detail: "" });
+  };
+
+  const handleEdit = (id) => {
+    setTask(items[id]);
+    setEditIndex(id);
+  }
+
+  const handleDelete = (id) => {
+    setItems((prev) => { return prev.filter((item, index) => { return index !== id })});
   }
 
   return (
     <>
       <Header/>
-      <Input task={task} handleChange={handleChange} handleClick={handleClick}/>
-      {items.map((item)=> {
-        return <Task title={item.title} detail={item.detail}/>
+      <Input task={task} editIndex={editIndex} handleChange={handleChange} handleClick={handleClick}/>
+      {items.map((item, index)=> {
+        return <Task id={index} onDelete={handleDelete} onEdit={handleEdit} task={item}/>
       })}
     </>
   )

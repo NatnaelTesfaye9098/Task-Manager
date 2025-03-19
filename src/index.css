@@ -63,7 +63,7 @@ textarea, input::placeholder{
   font-family: 'Courier New', Courier, monospace;
 }
 
-button{
+.input-container button{
   width: 50px;
   height: 50px;
   background-color: #D98324;
@@ -80,15 +80,25 @@ button{
   color: #443627;
 }
 
-button:hover{
+.input-container button:hover{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .card{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: auto;
   width: 200px;
-  height: 400px;
+  height: fit-content;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+  overflow-wrap: wrap;
+}
 
+.card #bt1{
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }

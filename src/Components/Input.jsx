@@ -1,4 +1,4 @@
-const Input = ({task, handleChange, handleClick}) => {
+const Input = ({task, handleChange, handleClick, editIndex}) => {
 
     return (
         <>
@@ -7,8 +7,8 @@ const Input = ({task, handleChange, handleClick}) => {
                 <textarea name="detail" rows="10" placeholder="Details" value={task.detail} onChange={handleChange}></textarea>
             </div>
             <button onClick={()=>{
-                handleClick(task)
-            }}>Add</button>
+                handleClick()
+            }}>{editIndex ? "Update Task" : "Add Task"}</button>
         </>
     );
 };
