@@ -2,11 +2,15 @@ const Task = ({id, task, onDelete, onEdit, onToggle}) => {
 
     return(
         <div className="card">
-            <h2>{task.title}</h2>
+            <span>{task.title}<hr/></span>
             <p>{task.detail}</p>
-            <button id="bt1" onClick={()=> onDelete(id)}>Delete</button>
-            <button id= "bt2" onClick={()=>onEdit(id)}>Edit</button>
-            <input type="checkbox" name="completed" onChange={()=>onToggle(id)}/>Completed
+            <div class="buttons">
+                <button id="bt1" onClick={()=> onDelete(id)}>Delete</button>
+                <button id= "bt2" onClick={()=> onEdit(id)}>Edit</button>
+            </div>
+            <label>
+                <input type="checkbox" name="completed" checked={task.completed} onChange={()=>onToggle(id)}/>Completed
+            </label>
         </div>
     )
 }

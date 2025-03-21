@@ -24,8 +24,8 @@ const Input = ({ task, handleChange, handleClick, editIndex }) => {
               onChange={handleChange}
               required
             ></textarea>
+          <button type="submit">{editIndex !== null ? "Update" : "Add"}</button>
           </div>
-          <button type="submit">{editIndex ? "Update Task" : "Add Task"}</button>
         </form>
       </>
     );

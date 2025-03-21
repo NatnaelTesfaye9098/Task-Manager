@@ -28,7 +28,7 @@ const App = () => {
       setItems(updatedItems);
       setEditIndex(null);
     } else{
-      setItems((prev) => [...prev, task])
+      setItems((prev) => [...prev, {...task}]);
     }
 
     setTask({title: "", detail: ""});
@@ -41,6 +41,10 @@ const App = () => {
 
   const handleDelete = (id) => {
     setItems((prev) => { return prev.filter((item, index) => { return index !== id })});
+    if (editIndex === id) {
+      setTask({ title: "", detail: "", completed: false });
+      setEditIndex(null);
+    }
   }
 
   const handleCompleted = (id) => {
@@ -60,33 +64,39 @@ const App = () => {
     <>
       <Header/>
       <Input task={task} editIndex={editIndex} handleChange={handleChange} handleClick={handleClick}/>
-      <div>
-        <input
-          type="radio"
-          name="filter"
-          value="all"
-          onChange={() => setFilter("all")}
-        />
-        All
-        <input
-          type="radio"
-          name="filter"
-          value="completed"
-          onChange={() => setFilter("completed")}
-        />
-        Completed
+      <div className="filter">
+        <h3>Filter:</h3>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="all"
+            onChange={() => setFilter("all")}
+          />
+          All
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="completed"
+            onChange={() => setFilter("completed")}
+          />
+          Completed
+        </label>
       </div>
 
-      {filteredItems.map((item, index) => (
-        <Task
-          key={index}
-          id={index}
-          task={item}
-          onDelete={handleDelete}
-          onEdit={handleEdit}
-          onToggle={handleCompleted}
-        />
-      ))}
+      <div class="card-container">
+        {filteredItems.map((item, index) => (
+          <Task
+            id={index}
+            task={item}
+            onDelete={handleDelete}
+            onEdit={handleEdit}
+            onToggle={handleCompleted}
+          />
+        ))}
+      </div>
     </>
   )
 }
