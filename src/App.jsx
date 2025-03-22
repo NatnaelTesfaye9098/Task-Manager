@@ -5,6 +5,7 @@ import Task from "./Components/Task.jsx";
 
 const App = () => {
   const [task, setTask] = useState({
+    id: "",
     title: "",
     detail: "",
     completed: false
@@ -40,12 +41,15 @@ const App = () => {
   }
 
   const handleDelete = (id) => {
-    setItems((prev) => { return prev.filter((item, index) => { return index !== id })});
+    setItems((prev) => prev.filter((item, index) => { return index !== id }));
+    
     if (editIndex === id) {
-      setTask({ title: "", detail: "", completed: false });
-      setEditIndex(null);
+      setEditIndex(null); 
+      setTask({ title: "", detail: "" }); 
+    } else if (editIndex > id) {
+      setEditIndex((prev) => prev - 1);
     }
-  }
+  };
 
   const handleCompleted = (id) => {
     setItems((prev) =>

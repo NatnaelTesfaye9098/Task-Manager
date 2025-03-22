@@ -1,9 +1,9 @@
 body{
   margin: 0px;
-  background-color: #2C3930;
+  background-color:#EFDCAB;
   display: flex;
   flex-direction: column;
-  color: #DCD7C9;
+  color: #3A3A3A;
 }
 
 .header{
@@ -13,13 +13,13 @@ body{
   top: 0;
   left: 0;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-  background-color: #3F4F44;
+  background-color: #443627;
   z-index: 1;
 }
 
 .header h1{
   margin-left: 50px;
-  color: #DCD7C9;
+  color: #F2F6D0;
 }
 
 .input-container{
@@ -29,7 +29,6 @@ body{
   left: 50%;
   transform: translateX(-50%);
   margin-top: 150px;
-  background-color: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -38,7 +37,7 @@ body{
   padding-left: 15px;
   border: 0;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
-  background-color: #DCD7C9;
+  background-color: #F2F6D0;
 }
 
 .input-container input{
@@ -49,7 +48,7 @@ body{
   box-sizing: border-box;
   border: 0;
   border-bottom: 1px solid #443627;
-  background-color: #DCD7C9;
+  background-color:#F2F6D0;
 }
 
 .input-container textarea{
@@ -60,7 +59,7 @@ body{
   width: 100%;
   box-sizing: border-box;
   resize: none;
-  background-color: #DCD7C9;
+  background-color:#F2F6D0;
 }
 
 textarea, input::placeholder{
@@ -74,26 +73,22 @@ textarea, input::placeholder{
   padding: 10px;
   padding-top: 7px;
   text-align: center;
-  background-color: #3F4F44;
+  background-color: #D98324;
   position: absolute;
   top: 135px;
   left: 400px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
-  border: 2px solid #A27B5C;
+  border-radius: 5px;
+  border: none;
   color:#DCD7C9;
   box-sizing: border-box;
   font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-.input-container::after{
-  content: "";
-  
-}
-
 .input-container button:hover{
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #C0731F;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -121,14 +116,15 @@ textarea, input::placeholder{
   border-radius: 20px;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
   word-break: break-all;
-  background-color: #DCD7C9;
-  color: #2C3930;
+  background-color: #F2F6D0;
+  color: #444;
 }
 
 .card span{
   font-size: 20px;
   font-weight: 800;
   text-transform: capitalize;
+  color: #443627;
 }
 
 .card span hr {
@@ -137,6 +133,7 @@ textarea, input::placeholder{
 
 .card p {
   margin-top: 0px;
+  color:#444;
 }
 
 .card .buttons{
@@ -147,16 +144,18 @@ textarea, input::placeholder{
 
 .card .buttons button{
   border-radius: 10px;
-  background-color: #A27B5C;
-  border: 0;
   padding: 10px;
-  color: #DCD7C9;
+  background-color: transparent;
+  border: 1px solid #D98324;
+  color: #D98324;
 }
 
 .card .buttons button:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.9);
-  transition: all 0.2s ease-in-out;
+  background-color: #D98324;
+  color: #FFFFFF;
+  border: none;
+  transition: all 0.5s ease-in-out;
 }
 
 .card label{
