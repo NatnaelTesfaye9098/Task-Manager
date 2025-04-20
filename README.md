@@ -2,7 +2,7 @@
 
 A simple **Task Manager App** built with **React.js** to manage daily tasks efficiently. 
 
-# Live Demo
+## Live Demo
 https://voluble-gaufre-9a69c8.netlify.app/
 
 ## Features  
