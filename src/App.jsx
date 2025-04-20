@@ -63,7 +63,6 @@ const App = () => {
     filter === "all" ? true : item.completed
   );
 
-
   return (
     <>
       <Header/>
