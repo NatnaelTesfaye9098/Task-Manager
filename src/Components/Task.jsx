@@ -1,7 +1,7 @@
 const Task = ({id, task, onDelete, onEdit, onToggle}) => {
 
     return(
-        <div className="card">
+        <div className={task.completed ? "card completed-task-card" : "card"}>
             <span>{task.title}<hr/></span>
             <p>{task.detail}</p>
             <div class="buttons">
@@ -9,7 +9,7 @@ const Task = ({id, task, onDelete, onEdit, onToggle}) => {
                 <button id= "bt2" onClick={()=> onEdit(id)}>Edit</button>
             </div>
             <label>
-                <input type="checkbox" name="completed" checked={task.completed} onChange={()=>onToggle(id)}/>Completed
+            <input type="checkbox" name="completed" checked={task.completed} onChange={()=> onToggle(id)}/>Completed
             </label>
         </div>
     )

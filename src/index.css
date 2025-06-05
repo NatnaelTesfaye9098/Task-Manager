@@ -187,3 +187,25 @@ textarea, input::placeholder{
 .filter label input{
   color: #A27B5C;
 }
+
+.completed-task-card{
+  background-color: #d1df5b;
+  color: #610e0e;
+}
+
+.completed-task-card span{
+  color: #610e0e;
+}
+
+.completed-task-card p{
+  color: #610e0e;
+}
+
+.completed-task-card .buttons button{
+  border: 1px solid #311e09;
+  color: #311e09;
+}
+
+.completed-task-card .buttons button:hover{
+  background-color: #311e09;
+}
