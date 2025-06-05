@@ -12,6 +12,7 @@ A simple **Task Manager App** built with **React.js** to manage daily tasks effi
 
 ## Installation  
 
+
 ```sh
 git clone https://github.com/NatnaelTesfaye9098/Task-Manager.git
 cd Task-Manager
