@@ -32,4 +32,3 @@ const Input = ({ task, handleChange, handleClick, editIndex }) => {
   };
   
 export default Input;
-  
